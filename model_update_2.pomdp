@@ -1,0 +1,103 @@
+discount: 0.99
+values: reward
+states: red1 blue1 red2 blue2 terminal      
+actions: gaze ask projectred1 projectblue1 projectred2 projectblue2
+observations: table1 table2 red blue na   
+
+start:uniform
+
+T:gaze
+identity
+
+T:ask 
+identity
+
+T:projectred1 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+T:projectblue1 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+T:projectred2 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+T:projectblue2 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+O:gaze
+0.9 0.1 0.0 0.0 0.0
+0.9 0.1 0.0 0.0 0.0
+0.1 0.9 0.0 0.0 0.0
+0.1 0.9 0.0 0.0 0.0
+0.0 0.0 0.0 0.0 1.0
+
+O:ask
+0.0 0.0 0.9 0.1 0.0
+0.0 0.0 0.1 0.9 0.0
+0.0 0.0 0.9 0.1 0.0
+0.0 0.0 0.1 0.9 0.0
+0.0 0.0 0.0 0.0 1.0
+
+O:projectred1
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+O:projectblue1
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+O:projectred2
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0  
+
+O:projectblue2
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0  
+
+
+R:gaze : * : * : * -4.0
+R:ask : * : * : * -4.0
+R:projectred1 : red1 : terminal :  * 60
+R:projectred1 : blue1 : terminal : *  -60
+R:projectred1 : red2 : terminal : *  -60
+R:projectred1 : blue2 : terminal : *  -60
+R:projectblue1 : red1 : terminal :  * -60
+R:projectblue1 : blue1 : terminal : *  60
+R:projectblue1 : red2 : terminal : *  -60
+R:projectblue1 : blue2 : terminal : *  -60
+R:projectred2 : red1 : terminal :  * -60
+R:projectred2 : blue1 : terminal : *  -60
+R:projectred2 : red2 : terminal : *  60
+R:projectred2 : blue2 : terminal : *  -60
+R:projectblue2 : red1 : terminal :  * -60
+R:projectblue2 : blue1 : terminal : *  -60
+R:projectblue2 : red2 : terminal : *  -60
+R:projectblue2 : blue2 : terminal : *  60
